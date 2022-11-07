@@ -6,7 +6,7 @@ import com.food.ordering.system.domain.valueobject.*;
 import com.food.ordering.system.order.service.domain.exception.OrderDomainException;
 import com.food.ordering.system.order.service.domain.valueobject.OrderItemId;
 import com.food.ordering.system.order.service.domain.valueobject.StreetAddres;
-import com.food.ordering.system.order.service.domain.valueobject.TrakingId;
+import com.food.ordering.system.order.service.domain.valueobject.TrackingId;
 
 import java.util.Collections;
 import java.util.List;
@@ -20,13 +20,13 @@ public class Order extends AggregateRoot<OrderId> {
     private final Money price;
     private final List<OrderItem> items;
 
-    private TrakingId trakingId;
+    private TrackingId trackingId;
     private OrderStatus orderStatus;
     private List<String> failureMessages;
 
     public void initializeOrder(){
         setId(new OrderId(UUID.randomUUID()));
-        trakingId = new TrakingId(UUID.randomUUID());
+        trackingId = new TrackingId(UUID.randomUUID());
         orderStatus = OrderStatus.PENDING;
         initializeOrderItems();
     }
@@ -122,7 +122,7 @@ public class Order extends AggregateRoot<OrderId> {
         streetAddres = builder.streetAddres;
         price = builder.price;
         items = builder.items;
-        trakingId = builder.trakingId;
+        trackingId = builder.trackingId;
         orderStatus = builder.orderStatus;
         failureMessages = builder.failureMessages;
     }
@@ -154,8 +154,8 @@ public class Order extends AggregateRoot<OrderId> {
         return items;
     }
 
-    public TrakingId getTrakingId() {
-        return trakingId;
+    public TrackingId getTrakingId() {
+        return trackingId;
     }
 
     public OrderStatus getOrderStatus() {
@@ -176,7 +176,7 @@ public class Order extends AggregateRoot<OrderId> {
         private StreetAddres streetAddres;
         private Money price;
         private List<OrderItem> items;
-        private TrakingId trakingId;
+        private TrackingId trackingId;
         private OrderStatus orderStatus;
         private List<String> failureMessages;
 
@@ -213,8 +213,8 @@ public class Order extends AggregateRoot<OrderId> {
             return this;
         }
 
-        public Builder trakingId(TrakingId val) {
-            trakingId = val;
+        public Builder trakingId(TrackingId val) {
+            trackingId = val;
             return this;
         }
 

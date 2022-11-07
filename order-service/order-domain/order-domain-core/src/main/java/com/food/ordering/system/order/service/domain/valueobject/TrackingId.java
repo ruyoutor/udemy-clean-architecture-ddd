@@ -4,9 +4,9 @@ import com.food.ordering.system.domain.valueobject.BaseId;
 
 import java.util.UUID;
 
-public class TrakingId extends BaseId<UUID> {
+public class TrackingId extends BaseId<UUID> {
 
-    public TrakingId(UUID value) {
+    public TrackingId(UUID value) {
         super(value);
     }
 }
