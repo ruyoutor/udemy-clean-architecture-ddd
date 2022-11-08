@@ -5,7 +5,7 @@ import com.food.ordering.system.domain.exception.DomainException;
 import com.food.ordering.system.domain.valueobject.*;
 import com.food.ordering.system.order.service.domain.exception.OrderDomainException;
 import com.food.ordering.system.order.service.domain.valueobject.OrderItemId;
-import com.food.ordering.system.order.service.domain.valueobject.StreetAddres;
+import com.food.ordering.system.order.service.domain.valueobject.StreetAddress;
 import com.food.ordering.system.order.service.domain.valueobject.TrackingId;
 
 import java.util.Collections;
@@ -16,7 +16,7 @@ public class Order extends AggregateRoot<OrderId> {
 
     private final CustomerId customerId;
     private final RestaurantId restaurantId;
-    private final StreetAddres streetAddres;
+    private final StreetAddress deliveryAddress;
     private final Money price;
     private final List<OrderItem> items;
 
@@ -119,7 +119,7 @@ public class Order extends AggregateRoot<OrderId> {
         super(builder.orderId);
         customerId = builder.customerId;
         restaurantId = builder.restaurantId;
-        streetAddres = builder.streetAddres;
+        deliveryAddress = builder.deliveryAddress;
         price = builder.price;
         items = builder.items;
         trackingId = builder.trackingId;
@@ -139,8 +139,8 @@ public class Order extends AggregateRoot<OrderId> {
         return restaurantId;
     }
 
-    public StreetAddres getStreetAddres() {
-        return streetAddres;
+    public StreetAddress getStreetAddress() {
+        return deliveryAddress;
     }
 
     public Money getPrice() {
@@ -173,7 +173,7 @@ public class Order extends AggregateRoot<OrderId> {
         private OrderId orderId;
         private CustomerId customerId;
         private RestaurantId restaurantId;
-        private StreetAddres streetAddres;
+        private StreetAddress deliveryAddress;
         private Money price;
         private List<OrderItem> items;
         private TrackingId trackingId;
@@ -198,8 +198,8 @@ public class Order extends AggregateRoot<OrderId> {
             return this;
         }
 
-        public Builder streetAddres(StreetAddres val) {
-            streetAddres = val;
+        public Builder deliveryAddress(StreetAddress val) {
+            deliveryAddress = val;
             return this;
         }
 
