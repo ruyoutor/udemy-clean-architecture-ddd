@@ -19,5 +19,5 @@ public class TrackOrderResponse {
     @NotNull
     private final OrderStatus orderStatus;
     @NotNull
-    private List<String> messages;
+    private List<String> failureMessages;
 }
