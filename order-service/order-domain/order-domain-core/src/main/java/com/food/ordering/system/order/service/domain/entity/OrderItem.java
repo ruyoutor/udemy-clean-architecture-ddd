@@ -13,7 +13,7 @@ public class OrderItem extends BaseEntity<OrderItemId> {
     private Money price;
     private Money subTotal;
 
-    void initializeOrdemItem(OrderId id, OrderItemId orderItemId) {
+    void initializeOrderItem(OrderId id, OrderItemId orderItemId) {
         this.orderId = id;
         super.setId(orderItemId);
     }

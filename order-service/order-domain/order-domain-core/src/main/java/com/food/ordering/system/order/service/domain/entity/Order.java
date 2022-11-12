@@ -1,7 +1,6 @@
 package com.food.ordering.system.order.service.domain.entity;
 
 import com.food.ordering.system.domain.entity.AggregateRoot;
-import com.food.ordering.system.domain.exception.DomainException;
 import com.food.ordering.system.domain.valueobject.*;
 import com.food.ordering.system.order.service.domain.exception.OrderDomainException;
 import com.food.ordering.system.order.service.domain.valueobject.OrderItemId;
@@ -23,6 +22,8 @@ public class Order extends AggregateRoot<OrderId> {
     private TrackingId trackingId;
     private OrderStatus orderStatus;
     private List<String> failureMessages;
+
+    public static final String FAILURE_MESSAGE_DELIMITER = ",";
 
     public void initializeOrder(){
         setId(new OrderId(UUID.randomUUID()));
@@ -111,7 +112,7 @@ public class Order extends AggregateRoot<OrderId> {
     private void initializeOrderItems() {
         long itemId = 1;
         for (OrderItem orderItem: items){
-            orderItem.initializeOrdemItem(super.getId(), new OrderItemId(itemId++));
+            orderItem.initializeOrderItem(super.getId(), new OrderItemId(itemId++));
         }
     }
 
@@ -139,7 +140,7 @@ public class Order extends AggregateRoot<OrderId> {
         return restaurantId;
     }
 
-    public StreetAddress getStreetAddress() {
+    public StreetAddress getDeliveryAddress() {
         return deliveryAddress;
     }
 
@@ -154,7 +155,7 @@ public class Order extends AggregateRoot<OrderId> {
         return items;
     }
 
-    public TrackingId getTrakingId() {
+    public TrackingId getTrackingId() {
         return trackingId;
     }
 
@@ -166,7 +167,7 @@ public class Order extends AggregateRoot<OrderId> {
         if (this.failureMessages != null) {
             return Collections.unmodifiableList(this.failureMessages);
         }
-        return failureMessages;
+        return null;
     }
 
     public static final class Builder {
@@ -213,7 +214,7 @@ public class Order extends AggregateRoot<OrderId> {
             return this;
         }
 
-        public Builder trakingId(TrackingId val) {
+        public Builder trackingId(TrackingId val) {
             trackingId = val;
             return this;
         }
