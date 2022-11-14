@@ -1,6 +1,10 @@
 package com.food.ordering.system.order.service.messaging.mapper;
 
+import com.food.ordering.system.domain.valueobject.OrderApprovalState;
+import com.food.ordering.system.domain.valueobject.PaymentStatus;
 import com.food.ordering.system.kafka.order.avro.model.*;
+import com.food.ordering.system.order.service.domain.dto.message.PaymentResponse;
+import com.food.ordering.system.order.service.domain.dto.message.RestaurantApprovalResponse;
 import com.food.ordering.system.order.service.domain.entity.Order;
 import com.food.ordering.system.order.service.domain.entity.OrderItem;
 import com.food.ordering.system.order.service.domain.event.OrderCancelledEvent;
@@ -56,6 +60,34 @@ public class OrderMessagingDataMapper {
 
     }
 
+    public PaymentResponse paymentResponseAvroModelToPaymentResponse(PaymentResponseAvroModel
+                                                                             paymentResponseAvroModel) {
+        return PaymentResponse.builder()
+                .id(paymentResponseAvroModel.getId())
+                .sagaId(paymentResponseAvroModel.getSagaId())
+                .paymentId(paymentResponseAvroModel.getPaymentId())
+                .customerId(paymentResponseAvroModel.getCustomerId())
+                .orderId(paymentResponseAvroModel.getOrderId())
+                .price(paymentResponseAvroModel.getPrice())
+                .createdAt(paymentResponseAvroModel.getCreatedAt())
+                .paymentStatus(PaymentStatus.valueOf(paymentResponseAvroModel.getPaymentStatus().toString()))
+                .failureMessage(paymentResponseAvroModel.getFailureMessages())
+                .build();
+    }
+
+    public RestaurantApprovalResponse approvedResponseAvroModelToApprovalResponse(RestaurantApprovalResponseAvroModel
+                                                                                          avroModel) {
+        return RestaurantApprovalResponse.builder()
+                .id(avroModel.getId())
+                .orderId(avroModel.getOrderId())
+                .sagaId(avroModel.getSagaId())
+                .restaurantId(avroModel.getRestaurantId())
+                .orderApprovalState(OrderApprovalState.valueOf(avroModel.getOrderApprovalState().name()))
+                .createdAt(avroModel.getCreatedAt())
+                .failureMessages(avroModel.getFailureMessages())
+                .build();
+    }
+
     private List<Product> productsOrderToProductsAvroModel(List<OrderItem> items) {
         return items.stream().map(item ->
                 Product.newBuilder()
@@ -64,4 +96,5 @@ public class OrderMessagingDataMapper {
                         .build())
                 .collect(Collectors.toList());
     }
+
 }
