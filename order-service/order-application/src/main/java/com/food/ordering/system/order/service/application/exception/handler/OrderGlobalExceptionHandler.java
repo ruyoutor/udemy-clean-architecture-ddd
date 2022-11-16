@@ -3,7 +3,7 @@ package com.food.ordering.system.order.service.application.exception.handler;
 import com.food.ordering.system.application.handler.ErrorDTO;
 import com.food.ordering.system.application.handler.GlobalExceptionHandler;
 import com.food.ordering.system.order.service.domain.exception.OrderDomainException;
-import com.food.ordering.system.order.service.domain.exception.OrderNotFoudException;
+import com.food.ordering.system.order.service.domain.exception.OrderNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -27,13 +27,13 @@ public class OrderGlobalExceptionHandler extends GlobalExceptionHandler {
     }
 
     @ResponseBody
-    @ExceptionHandler(value = {OrderDomainException.class})
+    @ExceptionHandler(value = {OrderNotFoundException.class})
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ErrorDTO handlerException(OrderNotFoudException orderNotFoudException){
-        log.error(orderNotFoudException.getMessage(), orderNotFoudException);
+    public ErrorDTO handlerException(OrderNotFoundException orderNotFoundException){
+        log.error(orderNotFoundException.getMessage(), orderNotFoundException);
         return ErrorDTO.builder()
                 .code(HttpStatus.NOT_FOUND.getReasonPhrase())
-                .message(orderNotFoudException.getMessage())
+                .message(orderNotFoundException.getMessage())
                 .build();
     }
 }

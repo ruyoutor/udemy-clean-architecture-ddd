@@ -13,6 +13,7 @@ CREATE TABLE "order".orders
 (
     id uuid NOT NULL,
     customer_id uuid NOT NULL,
+    restaurant_id uuid NOT NULL,
     tracking_id uuid NOT NULL,
     price numeric(10,2) NOT NULL,
     order_status order_status NOT NULL,

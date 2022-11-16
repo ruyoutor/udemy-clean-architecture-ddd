@@ -23,6 +23,7 @@ public class OrderMessagingDataMapper {
         Order order = orderCreatedEvent.getOrder();
         return PaymentRequestAvroModel.newBuilder()
                 .setId(UUID.randomUUID().toString())
+                .setOrderId(order.getId().getValue().toString())
                 .setSagaId("")
                 .setCustomerId(order.getCustomerId().getValue().toString())
                 .setPrice(order.getPrice().getAmount())
@@ -35,6 +36,7 @@ public class OrderMessagingDataMapper {
         Order order = orderCancelledEvent.getOrder();
         return PaymentRequestAvroModel.newBuilder()
                 .setId(UUID.randomUUID().toString())
+                .setOrderId(order.getId().getValue().toString())
                 .setSagaId("")
                 .setCustomerId(order.getCustomerId().getValue().toString())
                 .setPrice(order.getPrice().getAmount())
@@ -49,8 +51,8 @@ public class OrderMessagingDataMapper {
         Order order = orderPaidEvent.getOrder();
         return RestaurantApprovalRequestAvroModel.newBuilder()
                 .setId(UUID.randomUUID().toString())
-                .setSagaId("")
                 .setOrderId(order.getId().getValue().toString())
+                .setSagaId("")
                 .setRestaurantId(order.getRestaurantId().getValue().toString())
                 .setProducts(productsOrderToProductsAvroModel(order.getItems()))
                 .setPrice(order.getPrice().getAmount())
@@ -64,10 +66,10 @@ public class OrderMessagingDataMapper {
                                                                              paymentResponseAvroModel) {
         return PaymentResponse.builder()
                 .id(paymentResponseAvroModel.getId())
+                .orderId(paymentResponseAvroModel.getOrderId())
                 .sagaId(paymentResponseAvroModel.getSagaId())
                 .paymentId(paymentResponseAvroModel.getPaymentId())
                 .customerId(paymentResponseAvroModel.getCustomerId())
-                .orderId(paymentResponseAvroModel.getOrderId())
                 .price(paymentResponseAvroModel.getPrice())
                 .createdAt(paymentResponseAvroModel.getCreatedAt())
                 .paymentStatus(PaymentStatus.valueOf(paymentResponseAvroModel.getPaymentStatus().toString()))

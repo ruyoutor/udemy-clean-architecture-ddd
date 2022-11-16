@@ -82,7 +82,7 @@ AS
   WHERE r.id = rp.restaurant_id AND p.id = rp.product_id
 WITH DATA;
 
-refresh materialized VIEW restaurant.order_restaruant_m_view;
+refresh materialized VIEW restaurant.order_restaurant_m_view;
 
 DROP function IF EXISTS restaurant.refresh_order_restaurant_m_view;
 

@@ -29,10 +29,10 @@ public class OrderEntity {
     private OrderStatus orderStatus;
     private String failureMessages;
 
-    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "orderEntity", cascade = CascadeType.ALL)
     private OrderAddressEntity addressEntity;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "orderEntity", cascade = CascadeType.ALL)
     private List<OrderItemEntity> items;
 
     @Override

@@ -1,0 +1,29 @@
+server:
+  port: 8184
+
+spring:
+  jpa:
+    open-in-view: false
+    show-sql: true
+    database-platform: org.hibernate-dialect.Postgresql9Dialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL9Dialect
+  datasource:
+      url: jdbc:postgresql://localhost:5432/postgres?currentSchema=customer&binaryTransfer=true&reWriteBatchedInserts=true&stringtype=unspecified
+      username: postgres
+      password: admin
+      driver-class-name: org.postgresql.Driver
+      platform: postgres
+      schema: classpath:init-schema.sql, classpath:restaurant-schema.sql
+      data: classpath:init-data.sql, classpath:restaurant-data.sql
+      initialization-mode: always
+#    restaurant:
+#      url: jdbc:postgresql://localhost:5432/postgres?currentSchema=restaurant&binaryTransfer=true&reWriteBatchedInserts=true&stringtype=unspecified
+#      username: postgres
+#      password: admin
+#      driver-class-name: org.postgresql.Driver
+#      platform: postgres
+#      schema: classpath:restaurant-schema.sql
+#      data: classpath:restaurant-data.sql
+#      initialization-mode: always
