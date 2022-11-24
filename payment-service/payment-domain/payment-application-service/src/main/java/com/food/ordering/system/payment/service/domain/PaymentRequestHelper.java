@@ -26,7 +26,7 @@ import java.util.UUID;
 public class PaymentRequestHelper {
 
     private enum Operation {
-        PAYMENT, CANCELL;
+        PAYMENT, CANCEL;
     }
 
     private final PaymentDomainService paymentDomainService;
@@ -69,7 +69,7 @@ public class PaymentRequestHelper {
         }
         
         Payment payment = paymentResponse.get();
-        PaymentEvent paymentEvent = process(Operation.CANCELL, payment);
+        PaymentEvent paymentEvent = process(Operation.CANCEL, payment);
         return paymentEvent;
     }
 
@@ -89,7 +89,7 @@ public class PaymentRequestHelper {
             return paymentEvent;
         }
 
-        if (Operation.CANCELL == operation) {
+        if (Operation.CANCEL == operation) {
             PaymentEvent paymentEvent = paymentDomainService.validateAndCancelPayment(
                     payment,
                     creditEntry,
