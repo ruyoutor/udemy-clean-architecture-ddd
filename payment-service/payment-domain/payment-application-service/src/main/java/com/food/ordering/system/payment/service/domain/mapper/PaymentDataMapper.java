@@ -3,14 +3,10 @@ package com.food.ordering.system.payment.service.domain.mapper;
 import com.food.ordering.system.domain.valueobject.CustomerId;
 import com.food.ordering.system.domain.valueobject.Money;
 import com.food.ordering.system.domain.valueobject.OrderId;
-import com.food.ordering.system.payment.domain.entity.Payment;
-import com.food.ordering.system.payment.domain.valueobject.PaymentId;
+import com.food.ordering.system.payment.service.domain.entity.Payment;
 import com.food.ordering.system.payment.service.domain.dto.PaymentRequest;
 import org.springframework.stereotype.Component;
 
-import java.math.BigDecimal;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.UUID;
 
 @Component

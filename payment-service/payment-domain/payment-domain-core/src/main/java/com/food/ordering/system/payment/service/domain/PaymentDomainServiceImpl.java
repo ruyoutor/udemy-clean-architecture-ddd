@@ -1,17 +1,17 @@
-package com.food.ordering.system.payment.domain;
+package com.food.ordering.system.payment.service.domain;
 
 import com.food.ordering.system.domain.event.publisher.DomainEventPublisher;
 import com.food.ordering.system.domain.valueobject.Money;
 import com.food.ordering.system.domain.valueobject.PaymentStatus;
-import com.food.ordering.system.payment.domain.entity.CreditEntry;
-import com.food.ordering.system.payment.domain.entity.CreditHistory;
-import com.food.ordering.system.payment.domain.entity.Payment;
-import com.food.ordering.system.payment.domain.event.PaymentCancelledEvent;
-import com.food.ordering.system.payment.domain.event.PaymentCompletedEvent;
-import com.food.ordering.system.payment.domain.event.PaymentEvent;
-import com.food.ordering.system.payment.domain.event.PaymentFailedEvent;
-import com.food.ordering.system.payment.domain.valueobject.CreditHistoryId;
-import com.food.ordering.system.payment.domain.valueobject.TransactionType;
+import com.food.ordering.system.payment.service.domain.entity.CreditEntry;
+import com.food.ordering.system.payment.service.domain.entity.CreditHistory;
+import com.food.ordering.system.payment.service.domain.entity.Payment;
+import com.food.ordering.system.payment.service.domain.event.PaymentCancelledEvent;
+import com.food.ordering.system.payment.service.domain.event.PaymentCompletedEvent;
+import com.food.ordering.system.payment.service.domain.event.PaymentEvent;
+import com.food.ordering.system.payment.service.domain.event.PaymentFailedEvent;
+import com.food.ordering.system.payment.service.domain.valueobject.CreditHistoryId;
+import com.food.ordering.system.payment.service.domain.valueobject.TransactionType;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.ZoneId;
