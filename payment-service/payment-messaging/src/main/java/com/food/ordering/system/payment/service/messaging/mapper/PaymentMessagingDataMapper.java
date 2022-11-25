@@ -1,6 +1,7 @@
 package com.food.ordering.system.payment.service.messaging.mapper;
 
 import com.food.ordering.system.domain.valueobject.PaymentOrderStatus;
+import com.food.ordering.system.kafka.order.avro.model.PaymentRequestAvroModel;
 import com.food.ordering.system.kafka.order.avro.model.PaymentResponseAvroModel;
 import com.food.ordering.system.kafka.order.avro.model.PaymentStatus;
 import com.food.ordering.system.payment.service.domain.dto.PaymentRequest;
@@ -30,7 +31,7 @@ public class PaymentMessagingDataMapper {
         return paymentEventToPaymentResponseAvroModel(paymentFailedEvent);
     }
 
-    public PaymentRequest paymentRequestAvroModelToPaymentRequest(PaymentResponseAvroModel paymentResponseAvroModel){
+    public PaymentRequest paymentRequestAvroModelToPaymentRequest(PaymentRequestAvroModel paymentResponseAvroModel){
         return PaymentRequest.builder()
                 .id(paymentResponseAvroModel.getId())
                 .sagaId(paymentResponseAvroModel.getSagaId())
@@ -38,7 +39,7 @@ public class PaymentMessagingDataMapper {
                 .orderId(paymentResponseAvroModel.getOrderId())
                 .price(paymentResponseAvroModel.getPrice())
                 .createdAt(paymentResponseAvroModel.getCreatedAt())
-                .paymentOrderStatus(PaymentOrderStatus.valueOf(paymentResponseAvroModel.getPaymentStatus().name()))
+                .paymentOrderStatus(PaymentOrderStatus.valueOf(paymentResponseAvroModel.getPaymentOrderStatus().name()))
                 .build();
     }
 
