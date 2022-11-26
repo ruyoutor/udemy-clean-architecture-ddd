@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="272994f2-853c-4fb6-a9ec-db8d066bcab8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/restaurant-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/restaurant-service/restaurant-container/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/restaurant-service/restaurant-dataaccess/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/restaurant-service/restaurant-domain/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/restaurant-service/restaurant-domain/restaurant-application-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/restaurant-service/restaurant-domain/restaurant-domain-core/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/restaurant-service/restaurant-messaging/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,11 +65,11 @@
       <recent name="$PROJECT_DIR$/customer-service/src/main/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.food.ordering.system.restaurant.service.domain.event" />
       <recent name="com.food.ordering.system.payment.service.messaging.publisher.kafka" />
       <recent name="com.food.ordering.system.kafka.producer.service" />
       <recent name="com.food.ordering.system.payment.service.domain.ports.output.message.publisher" />
       <recent name="com.food.ordering.system.payment.domain.event" />
-      <recent name="com.food.ordering.system.payment.domain.exception" />
     </key>
   </component>
   <component name="RunManager" selected="Application.PaymentServiceApplication">
