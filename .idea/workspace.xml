@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="272994f2-853c-4fb6-a9ec-db8d066bcab8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurant-service/restaurant-domain/restaurant-application-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-service/restaurant-domain/restaurant-application-service/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -42,7 +44,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "jdk.selected.JAVA_MODULE": "17",
     "last_directory_selection": "/Users/ruyoutor/workspace/learn/udemy/Microservices_Clean_Architecture_DDD_SAGA_Outbox_Kafka/food-ordering-system/infrastructure/kafka/kafka-producer/src/main/java/com/food/ordering/system",
-    "last_opened_file_path": "/Users/ruyoutor/workspace/learn/udemy/Microservices_Clean_Architecture_DDD_SAGA_Outbox_Kafka/food-ordering-system/restaurant-service/restaurant-domain/restaurant-domain-core/src/main/java/com/food/ordering/system/restaurant/service/domain",
+    "last_opened_file_path": "/Users/ruyoutor/workspace/learn/udemy/Microservices_Clean_Architecture_DDD_SAGA_Outbox_Kafka/food-ordering-system/restaurant-service/restaurant-domain/restaurant-application-service/src/main/java/com/food/ordering/system/restaurant/service/domain",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -55,21 +57,21 @@
       <recent name="com.food.ordering.system.order.service.application.exception.handler" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/restaurant-service/restaurant-domain/restaurant-application-service/src/main/java/com/food/ordering/system/restaurant/service/domain" />
       <recent name="$PROJECT_DIR$/restaurant-service/restaurant-domain/restaurant-domain-core/src/main/java/com/food/ordering/system/restaurant/service/domain" />
       <recent name="$PROJECT_DIR$/payment-service/payment-container/src/main/resources" />
       <recent name="$PROJECT_DIR$/payment-service/payment-dataaccess/src/main/java/com/food/ordering/system/payment/dataaccess" />
       <recent name="$PROJECT_DIR$/payment-service/payment-domain/payment-domain-core/src/main/java/com/food/ordering/system/payment/domain" />
-      <recent name="$PROJECT_DIR$/customer-service/src/main/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/customer-service/src/main/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.food.ordering.system.restaurant.service.domain.ports.output.repository" />
+      <recent name="com.food.ordering.system.restaurant.service.domain.ports.output.message.publisher" />
       <recent name="com.food.ordering.system.restaurant.service.domain.event" />
       <recent name="com.food.ordering.system.payment.service.messaging.publisher.kafka" />
       <recent name="com.food.ordering.system.kafka.producer.service" />
-      <recent name="com.food.ordering.system.payment.service.domain.ports.output.message.publisher" />
-      <recent name="com.food.ordering.system.payment.domain.event" />
     </key>
   </component>
   <component name="RunManager" selected="Application.PaymentServiceApplication">
