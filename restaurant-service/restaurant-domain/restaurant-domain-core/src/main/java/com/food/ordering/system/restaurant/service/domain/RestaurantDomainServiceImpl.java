@@ -1,7 +1,7 @@
 package com.food.ordering.system.restaurant.service.domain;
 
 import com.food.ordering.system.domain.event.publisher.DomainEventPublisher;
-import com.food.ordering.system.domain.valueobject.OrderApprovalState;
+import com.food.ordering.system.domain.valueobject.OrderApprovalStatus;
 import com.food.ordering.system.restaurant.service.domain.entity.Restaurant;
 import com.food.ordering.system.restaurant.service.domain.event.OrderApprovalEvent;
 import com.food.ordering.system.restaurant.service.domain.event.OrderApprovedEvent;
@@ -27,7 +27,7 @@ public class RestaurantDomainServiceImpl implements RestaurantDomainService {
 
         if (failureMessages.isEmpty()){
             log.info("Order is approved for order id: {}", restaurant.getOrderDetail().getId().getValue());
-            restaurant.constructOrderApproval(OrderApprovalState.APPROVED);
+            restaurant.constructOrderApproval(OrderApprovalStatus.APPROVED);
             return new OrderApprovedEvent(restaurant.getOrderApproval(),
                     restaurant.getId(),
                     failureMessages,
@@ -37,7 +37,7 @@ public class RestaurantDomainServiceImpl implements RestaurantDomainService {
         }
 
         log.info("Order is rejected for order id: {}", restaurant.getOrderDetail().getId().getValue());
-        restaurant.constructOrderApproval(OrderApprovalState.REJECTED);
+        restaurant.constructOrderApproval(OrderApprovalStatus.REJECTED);
         return new OrderRejectedEvent(restaurant.getOrderApproval(),
                 restaurant.getId(),
                 failureMessages,

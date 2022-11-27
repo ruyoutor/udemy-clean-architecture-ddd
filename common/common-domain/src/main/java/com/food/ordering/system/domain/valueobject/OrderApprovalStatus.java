@@ -1,6 +1,6 @@
 package com.food.ordering.system.domain.valueobject;
 
-public enum OrderApprovalState {
+public enum OrderApprovalStatus {
     APPROVED, REJECTED
 }
 
