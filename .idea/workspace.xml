@@ -6,15 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="272994f2-853c-4fb6-a9ec-db8d066bcab8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/kafka/kafka-model/src/main/java/com/food/ordering/system/kafka/order/avro/model/OrderApprovalState.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/kafka/kafka-model/src/main/java/com/food/ordering/system/kafka/order/avro/model/OrderApprovalStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/kafka/kafka-model/src/main/java/com/food/ordering/system/kafka/order/avro/model/RestaurantApprovalResponseAvroModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/kafka/kafka-model/src/main/java/com/food/ordering/system/kafka/order/avro/model/RestaurantApprovalResponseAvroModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/order-messaging/src/main/java/com/food/ordering/system/order/service/messaging/listener/kafka/RestaurantApprovalResponseKafkaListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-messaging/src/main/java/com/food/ordering/system/order/service/messaging/listener/kafka/RestaurantApprovalResponseKafkaListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurant-service/restaurant-dataaccess/src/main/java/com/food/ordering/system/restaurant/service/dataaccess/restaurant/mapper/RestaurantDataAccessMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-service/restaurant-dataaccess/src/main/java/com/food/ordering/system/restaurant/service/dataaccess/restaurant/mapper/RestaurantDataAccessMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurant-service/restaurant-domain/restaurant-application-service/src/main/java/com/food/ordering/system/restaurant/service/domain/RestaurantApprovalRequestHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-service/restaurant-domain/restaurant-application-service/src/main/java/com/food/ordering/system/restaurant/service/domain/RestaurantApprovalRequestHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurant-service/restaurant-domain/restaurant-application-service/src/main/java/com/food/ordering/system/restaurant/service/domain/ports/output/message/publisher/OrderRejectMessagePublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-service/restaurant-domain/restaurant-application-service/src/main/java/com/food/ordering/system/restaurant/service/domain/ports/output/message/publisher/OrderRejectedMessagePublisher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurant-service/restaurant-domain/restaurant-domain-core/src/main/java/com/food/ordering/system/restaurant/service/domain/entity/OrderApproval.java" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-service/restaurant-domain/restaurant-domain-core/src/main/java/com/food/ordering/system/restaurant/service/domain/entity/OrderApproval.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurant-service/restaurant-domain/restaurant-domain-core/src/main/java/com/food/ordering/system/restaurant/service/domain/entity/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-service/restaurant-domain/restaurant-domain-core/src/main/java/com/food/ordering/system/restaurant/service/domain/entity/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurant-service/restaurant-messaging/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-service/restaurant-messaging/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-dataaccess/src/main/java/com/food/ordering/system/restaurant/service/dataaccess/restaurant/entity/RestaurantEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-dataaccess/src/main/java/com/food/ordering/system/dataaccess/restaurant/entity/RestaurantEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-dataaccess/src/main/java/com/food/ordering/system/restaurant/service/dataaccess/restaurant/entity/RestaurantEntityId.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-dataaccess/src/main/java/com/food/ordering/system/dataaccess/restaurant/entity/RestaurantEntityId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-dataaccess/src/main/java/com/food/ordering/system/restaurant/service/dataaccess/restaurant/exception/RestaurantDataAccessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-dataaccess/src/main/java/com/food/ordering/system/dataaccess/restaurant/exception/RestaurantDataAccessException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common-dataaccess/src/main/java/com/food/ordering/system/restaurant/service/dataaccess/restaurant/respository/RestaurantJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/common-dataaccess/src/main/java/com/food/ordering/system/dataaccess/restaurant/respository/RestaurantJpaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/restaurant/adapter/RestaurantRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/restaurant/adapter/RestaurantRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/restaurant/mapper/RestaurantDataAccessMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/restaurant/mapper/RestaurantDataAccessMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurant-service/restaurant-container/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-service/restaurant-container/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurant-service/restaurant-dataaccess/src/main/java/com/food/ordering/system/restaurant/service/dataaccess/restaurant/adapter/OrderApprovalRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-service/restaurant-dataaccess/src/main/java/com/food/ordering/system/dataaccess/restaurant/adapter/OrderApprovalRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurant-service/restaurant-dataaccess/src/main/java/com/food/ordering/system/restaurant/service/dataaccess/restaurant/adapter/RestaurantRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-service/restaurant-dataaccess/src/main/java/com/food/ordering/system/dataaccess/restaurant/adapter/RestaurantRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurant-service/restaurant-dataaccess/src/main/java/com/food/ordering/system/restaurant/service/dataaccess/restaurant/entity/OrderApprovalEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-service/restaurant-dataaccess/src/main/java/com/food/ordering/system/dataaccess/restaurant/entity/OrderApprovalEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurant-service/restaurant-dataaccess/src/main/java/com/food/ordering/system/restaurant/service/dataaccess/restaurant/mapper/RestaurantDataAccessMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-service/restaurant-dataaccess/src/main/java/com/food/ordering/system/dataaccess/restaurant/mapper/RestaurantDataAccessMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurant-service/restaurant-dataaccess/src/main/java/com/food/ordering/system/restaurant/service/dataaccess/restaurant/repository/OrderApprovalJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-service/restaurant-dataaccess/src/main/java/com/food/ordering/system/dataaccess/restaurant/repository/OrderApprovalJpaRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +55,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "jdk.selected.JAVA_MODULE": "17",
     "last_directory_selection": "/Users/ruyoutor/workspace/learn/udemy/Microservices_Clean_Architecture_DDD_SAGA_Outbox_Kafka/food-ordering-system/infrastructure/kafka/kafka-producer/src/main/java/com/food/ordering/system",
-    "last_opened_file_path": "/Users/ruyoutor/workspace/learn/udemy/Microservices_Clean_Architecture_DDD_SAGA_Outbox_Kafka/food-ordering-system/restaurant-service/restaurant-messaging/src/main/java/com/food/ordering/system/restaurant/service/messaging",
+    "last_opened_file_path": "/Users/ruyoutor/workspace/learn/udemy/Microservices_Clean_Architecture_DDD_SAGA_Outbox_Kafka/food-ordering-system/restaurant-service/restaurant-container/src/main/resources",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -64,11 +68,11 @@
       <recent name="com.food.ordering.system.order.service.dataaccess.order.entity" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/restaurant-service/restaurant-container/src/main/resources" />
       <recent name="$PROJECT_DIR$/restaurant-service/restaurant-messaging/src/main/java/com/food/ordering/system/restaurant/service/messaging" />
       <recent name="$PROJECT_DIR$/common/common-dataaccess/src/main/java/com/food/ordering/system/dataaccess/restaurant/entity" />
       <recent name="$PROJECT_DIR$/common/common-dataaccess/src/main/java/com/food/ordering/system/dataaccess/restaurant" />
       <recent name="$PROJECT_DIR$/restaurant-service/restaurant-dataaccess/src/main/java/com/food/ordering/system/restaurant/service/dataaccess/restaurant" />
-      <recent name="$PROJECT_DIR$/restaurant-service/restaurant-domain/restaurant-application-service/src/main/java/com/food/ordering/system/restaurant/service/domain" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/customer-service/src/main/resources" />
@@ -81,7 +85,7 @@
       <recent name="com.food.ordering.system.restaurant.service.domain.event" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PaymentServiceApplication">
+  <component name="RunManager" selected="Application.RestaurantServiceApplication">
     <configuration name="CustomerServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.food.ordering.system.customer.service.CustomerServiceApplication" />
       <module name="customer-service" />
@@ -121,17 +125,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderApplicationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="order-application-service" />
+    <configuration name="RestaurantServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.food.ordering.system.restaurant.service.domain.RestaurantServiceApplication" />
+      <module name="restaurant-container" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.food.ordering.system.order.service.domain.*" />
+          <option name="PATTERN" value="com.food.ordering.system.restaurant.service.domain.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.food.ordering.system.order.service.domain" />
-      <option name="MAIN_CLASS_NAME" value="com.food.ordering.system.order.service.domain.OrderApplicationServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -152,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RestaurantServiceApplication" />
         <item itemvalue="Application.PaymentServiceApplication" />
         <item itemvalue="Application.OrderServiceApplication" />
         <item itemvalue="Application.CustomerServiceApplication" />
         <item itemvalue="JUnit.com.food.ordering.system.order.service.domain in order-application-service" />
-        <item itemvalue="JUnit.OrderApplicationServiceTest" />
       </list>
     </recent_temporary>
   </component>
