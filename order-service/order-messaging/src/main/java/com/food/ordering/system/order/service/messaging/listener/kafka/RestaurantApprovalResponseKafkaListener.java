@@ -1,10 +1,8 @@
 package com.food.ordering.system.order.service.messaging.listener.kafka;
 
 import com.food.ordering.system.kafka.consumer.KafkaConsumer;
-import com.food.ordering.system.kafka.order.avro.model.OrderApprovalState;
-import com.food.ordering.system.kafka.order.avro.model.PaymentStatus;
+import com.food.ordering.system.kafka.order.avro.model.OrderApprovalStatus;
 import com.food.ordering.system.kafka.order.avro.model.RestaurantApprovalResponseAvroModel;
-import com.food.ordering.system.order.service.domain.entity.Order;
 import com.food.ordering.system.order.service.domain.ports.input.message.listener.restaurantapproval.RestaurantApprovalResponseMessageListener;
 import com.food.ordering.system.order.service.messaging.mapper.OrderMessagingDataMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -46,12 +44,12 @@ public class RestaurantApprovalResponseKafkaListener implements KafkaConsumer<Re
                 offsets.toString());
 
         messages.forEach(avroModel -> {
-            if (OrderApprovalState.APPROVED == avroModel.getOrderApprovalState()) {
+            if (OrderApprovalStatus.APPROVED == avroModel.getOrderApprovalState()) {
                 log.info("Processing approval for order id:{}", avroModel.getOrderId());
                 responseMessageListener.orderApproved(orderMessagingDataMapper
                         .approvedResponseAvroModelToApprovalResponse(avroModel));
 
-            } else if (OrderApprovalState.REJECTED == avroModel.getOrderApprovalState()) {
+            } else if (OrderApprovalStatus.REJECTED == avroModel.getOrderApprovalState()) {
                 log.info("Processing rejected order for order id: {}, with failure messages: {}",
                         avroModel.getOrderId(),
                         String.join(FAILURE_MESSAGE_DELIMITER, avroModel.getFailureMessages()));

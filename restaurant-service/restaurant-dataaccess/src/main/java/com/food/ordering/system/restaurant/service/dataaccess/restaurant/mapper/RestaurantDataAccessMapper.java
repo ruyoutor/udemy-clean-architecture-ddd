@@ -55,7 +55,7 @@ public class RestaurantDataAccessMapper {
                 .id(orderApproval.getId().getValue())
                 .restaurantId(orderApproval.getRestaurantId().getValue())
                 .orderId(orderApproval.getOrderId().getValue())
-                .status(orderApproval.getOrderApprovalState())
+                .status(orderApproval.getApprovalStatus())
                 .build();
     }
 
@@ -64,7 +64,7 @@ public class RestaurantDataAccessMapper {
                 .orderApprovalId(new OrderApprovalId(orderApprovalEntity.getId()))
                 .restaurantId(new RestaurantId(orderApprovalEntity.getRestaurantId()))
                 .orderId(new OrderId(orderApprovalEntity.getOrderId()))
-                .orderApprovalState(orderApprovalEntity.getStatus())
+                .approvalStatus(orderApprovalEntity.getStatus())
                 .build();
     }
 
