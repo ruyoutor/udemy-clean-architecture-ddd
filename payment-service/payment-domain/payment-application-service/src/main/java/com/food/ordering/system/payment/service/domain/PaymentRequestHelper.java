@@ -14,6 +14,7 @@ import com.food.ordering.system.payment.service.domain.ports.output.message.publ
 import com.food.ordering.system.payment.service.domain.ports.output.repository.CreditEntryRepository;
 import com.food.ordering.system.payment.service.domain.ports.output.repository.CreditHistoryRepository;
 import com.food.ordering.system.payment.service.domain.ports.output.repository.PaymentRepository;
+import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -89,7 +90,7 @@ public class PaymentRequestHelper {
 
         CreditEntry creditEntry = getCreditEntry(payment.getCustomerId());
         List<CreditHistory> creditHistories = getCreditHistories(payment.getCustomerId());
-        List<String> failureMessages = Collections.emptyList();
+        List<String> failureMessages = Lists.newArrayList();
 
         if (Operation.PAYMENT == operation) {
             PaymentEvent paymentEvent = paymentDomainService.validateAndInitiatePayment(

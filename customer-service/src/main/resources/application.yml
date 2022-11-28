@@ -15,15 +15,6 @@ spring:
       password: admin
       driver-class-name: org.postgresql.Driver
       platform: postgres
-      schema: classpath:init-schema.sql, classpath:restaurant-schema.sql
-      data: classpath:init-data.sql, classpath:restaurant-data.sql
+      schema: classpath:init-schema.sql
+      data: classpath:init-data.sql
       initialization-mode: always
-#    restaurant:
-#      url: jdbc:postgresql://localhost:5432/postgres?currentSchema=restaurant&binaryTransfer=true&reWriteBatchedInserts=true&stringtype=unspecified
-#      username: postgres
-#      password: admin
-#      driver-class-name: org.postgresql.Driver
-#      platform: postgres
-#      schema: classpath:restaurant-schema.sql
-#      data: classpath:restaurant-data.sql
-#      initialization-mode: always
