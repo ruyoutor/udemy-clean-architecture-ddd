@@ -131,5 +131,6 @@ public class PaymentDomainServiceImpl implements PaymentDomainService {
     }
 
     private void addCreditEntry(Payment payment, CreditEntry creditEntry) {
+        creditEntry.addCreditAmount(payment.getPrice());
     }
 }

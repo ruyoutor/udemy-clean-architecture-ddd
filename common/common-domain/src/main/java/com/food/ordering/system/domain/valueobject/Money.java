@@ -30,7 +30,7 @@ public class Money {
 
     public Money subtract(Money money){
         Preconditions.checkNotNull(money);
-        return new Money(setScale(this.getAmount().add(money.getAmount())));
+        return new Money(setScale(this.getAmount().subtract(money.getAmount())));
     }
 
     public Money multiply(int multiplier){

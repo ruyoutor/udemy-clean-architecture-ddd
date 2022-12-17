@@ -84,7 +84,7 @@ public class OrderMessagingDataMapper {
                 .orderId(avroModel.getOrderId())
                 .sagaId(avroModel.getSagaId())
                 .restaurantId(avroModel.getRestaurantId())
-                .orderApprovalStatus(OrderApprovalStatus.valueOf(avroModel.getOrderApprovalState().name()))
+                .orderApprovalStatus(OrderApprovalStatus.valueOf(avroModel.getOrderApprovalStatus().name()))
                 .createdAt(avroModel.getCreatedAt())
                 .failureMessages(avroModel.getFailureMessages())
                 .build();

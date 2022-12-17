@@ -10,6 +10,7 @@ import com.food.ordering.system.restaurant.service.domain.ports.output.message.p
 import com.food.ordering.system.restaurant.service.domain.ports.output.message.publisher.OrderRejectedMessagePublisher;
 import com.food.ordering.system.restaurant.service.domain.ports.output.repository.OrderApprovalRepository;
 import com.food.ordering.system.restaurant.service.domain.ports.output.repository.RestaurantRepository;
+import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -47,7 +48,7 @@ public class RestaurantApprovalRequestHelper {
     @Transactional
     public OrderApprovalEvent persistOrderApproval(RestaurantApprovalRequest restaurantApprovalRequest) {
         log.info("Processing restaurant approval for order id: {}", restaurantApprovalRequest.getOrderId());
-        List<String> failureMessages = Collections.emptyList();
+        List<String> failureMessages = Lists.newArrayList();
         Restaurant restaurant = findRestaurant(restaurantApprovalRequest);
         OrderApprovalEvent orderApprovalEvent =
                 restaurantDomainService.validateOrder(
