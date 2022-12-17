@@ -18,7 +18,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQL9Dialect
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=restaurant&binaryTransfer=true&reWriteBatchedInserts=true&stringtype=unspecified
+    url: jdbc:postgresql://${database.host:localhost}:5432/postgres?currentSchema=restaurant&binaryTransfer=true&reWriteBatchedInserts=true&stringtype=unspecified
     username: postgres
     password: admin
     driver-class-name: org.postgresql.Driver
@@ -28,9 +28,10 @@ spring:
     initialization-mode: always
 
 kafka-config:
-  bootstrap-servers: localhost:19092, localhost:29092, localhost:39092
+  host: ${bootstrap.servers:localhost}
+  bootstrap-servers: ${kafka-config.host}:19092, ${kafka-config.host}:29092, ${kafka-config.host}:39092
   schema-registry-url-key: schema.registry.url
-  schema-registry-url: http://localhost:8081
+  schema-registry-url: http://${schema.registry.url:localhost}:8081
   num-of-partitions: 3
   replication-factor: 3
 
