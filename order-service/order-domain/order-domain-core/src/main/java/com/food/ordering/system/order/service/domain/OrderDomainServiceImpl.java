@@ -18,14 +18,13 @@ import java.util.List;
 public class OrderDomainServiceImpl implements OrderDomainService {
 
     @Override
-    public OrderCreatedEvent validateAndInitiateOrder(Order order, Restaurant restaurant,
-                                                      DomainEventPublisher<OrderCreatedEvent> orderCreatedPublisher) {
+    public OrderCreatedEvent validateAndInitiateOrder(Order order, Restaurant restaurant) {
         validateRestaurant(restaurant);
         setOrderProductInformation(order, restaurant);
         order.validateOrder();
         order.initializeOrder();
         log.info("Order with id: {} is initiated", order.getId().getValue());
-        return new OrderCreatedEvent(order, getUtcDateNow(), orderCreatedPublisher);
+        return new OrderCreatedEvent(order, getUtcDateNow());
     }
 
     @Override
