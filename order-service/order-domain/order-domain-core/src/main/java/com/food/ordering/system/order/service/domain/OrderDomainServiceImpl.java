@@ -28,10 +28,10 @@ public class OrderDomainServiceImpl implements OrderDomainService {
     }
 
     @Override
-    public OrderPaidEvent payOrder(Order order, DomainEventPublisher<OrderPaidEvent> orderPaidPublisher) {
+    public OrderPaidEvent payOrder(Order order) {
         order.pay();
         log.info("Order with id: {} is paid", order.getId().getValue());
-        return new OrderPaidEvent(order, getUtcDateNow(), orderPaidPublisher);
+        return new OrderPaidEvent(order, getUtcDateNow());
     }
 
     @Override
@@ -41,11 +41,10 @@ public class OrderDomainServiceImpl implements OrderDomainService {
     }
 
     @Override
-    public OrderCancelledEvent cancelOrderPayment(Order order, List<String> failureMessages,
-                                                  DomainEventPublisher<OrderCancelledEvent> orderCancelledPublisher) {
+    public OrderCancelledEvent cancelOrderPayment(Order order, List<String> failureMessages) {
         order.initCancel(failureMessages);
         log.info("Order payment has been cancelling for order id: {}", order.getId().getValue());
-        return new OrderCancelledEvent(order, getUtcDateNow(), orderCancelledPublisher);
+        return new OrderCancelledEvent(order, getUtcDateNow());
     }
 
     @Override

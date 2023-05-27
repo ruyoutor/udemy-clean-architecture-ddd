@@ -10,8 +10,4 @@ public class OrderCreatedEvent extends OrderEvent {
     public OrderCreatedEvent(Order order, ZonedDateTime createdAt) {
         super(order, createdAt);
     }
-
-    @Override
-    public void fire() {
-    }
 }
